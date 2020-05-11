@@ -1,4 +1,5 @@
-const app = require("express")();
+const express = require('express');
+const app = express();
 const bodyParser = require("body-parser");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
@@ -61,6 +62,10 @@ const Item = sequelize.define('item', {
 
 User.hasMany(Item,  {foreignKey: 'user_id', sourceKey: 'id'});
 Item.belongsTo(User, {foreignKey: 'user_id', targetKey: 'id'});
+
+app.use(express.json())
+
+//app.use('/', express.static('../frontend'))
 
 app.get("/create", (req,res) => {
     sequelize.sync({force : true})
@@ -219,6 +224,31 @@ app.put('/users/:id/items/:bid', (req, res) => {
                         .then((item) => {
                             if(item){
                                 return item.update(req.body);
+                            }else{
+                                res.status(404).send("Nu exista item cu acest id");
+                            }
+                    });
+                } else {
+                    res.status(404).send("Nu exista utilizator cu acest id");
+                }
+    	});
+	}
+	catch(error){
+	    console.warn(error);
+		res.status(500).send("Internal server error");
+	}
+});
+
+app.delete('/users/:id/items/:bid', (req, res) => {
+	try{
+	    User.findByPk(req.params.id)
+    		.then((user) => {
+                if(user) {
+                    Item.findByPk(req.params.bid)
+                        .then((item) => {
+                            if(item){
+								res.status(200).send("Item sters cu succes!");
+                                return item.destroy();
                             }else{
                                 res.status(404).send("Nu exista item cu acest id");
                             }
