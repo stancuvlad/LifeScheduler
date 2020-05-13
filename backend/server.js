@@ -65,7 +65,7 @@ Item.belongsTo(User, {foreignKey: 'user_id', targetKey: 'id'});
 
 app.use(express.json())
 
-//app.use('/', express.static('../frontend'))
+app.use('/', express.static('./frontend'))
 
 app.get("/create", (req,res) => {
     sequelize.sync({force : true})
