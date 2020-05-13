@@ -38,8 +38,48 @@ Seturi de segmente de linie (poligoane).
 Segmente inchise (poligoane).
 Grafice bitmap ancorate pozitiilor specifice de pe harta (Ground overlays).
 
-## Descriere arhitectura
+## Flux de date
 Exemple de request / response
+
+GetUsers request:
+```bash
+GET /users
+```
+
+GetUsers response:
+```bash
+[{
+	"id":1,
+	"username":"root",
+	"parola":"pass",
+	"email":"email@gmail.com",
+	"nivel_de_acces":1
+},
 {
-    "exemplu": "json"
+	"id":2,
+	"username":"Stancu Vlad",
+	"parola":"UNREGISTERED",
+	"email":"stancu.vlad.stefan@gmail.com",
+	"nivel_de_acces":1
+}]
+```
+
+GetUser Details request:
+```bash
+GET /users/{id}
+```
+
+GetUser Details response:
+```bash
+{
+	"id":1,
+	"username":"root",
+	"parola":"pass",
+	"email":"email@gmail.com",
+	"nivel_de_acces":1
 }
+```
+
+## Capturi ecran aplicație
+
+urmeaza sa introduc si pozele
