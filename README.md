@@ -85,4 +85,5 @@ Item sters cu succes!
 
 ## Capturi ecran aplicație
 
-urmeaza sa introduc si pozele
+Add a new task
+![]images/AddItemScreen.PNG
