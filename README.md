@@ -14,7 +14,6 @@ O multime de servicii Cloud Computing de tipul PaaS ofera un mediu de dezvoltare
 
 In ideea de a utiliza o platforma open source de Cloud Computing in dezvoltarea unei aplicatii mobile pentru a tine evidenta anumitor task-uri, remindere, locuri pe care dorim sa le vizitam s.a.m.d, cea mai potrivita platforma ar fi Goorm deoarece ofera un mediu de dezvoltare (IDE), unde poate fi rulat un sistem de operare (Ubuntu), creat un server folosind un modul express in Node.js in scopul de a crea un RESTful API.
 
-Asadar, aplicatia isi propune sa le permite utilizatorilor posibilitatea de a-si organiza mai bine timpul prin introducerea unor task-uri pe care acestia doresc sa le indeplineasca.
 
 ## Prezentare API-uri utilizate
 
@@ -22,11 +21,11 @@ Pentru inceput, folosind GoormIDE, am creat un RESTful API pe care l-am utilizat
 
 ## Google Sign-In
 
-Google Sign-In API este un sistem de autentificare sigur care reduce povara de conectare pentru utilizatori, permitandu-le sa se conecteze cu contul lor Google - acelasi cont pe care il folosesc deja cu Gmail, Play și alte servicii Google.
+Google Sign-In API este un sistem de autentificare sigur care reduce povara de conectare pentru utilizatori, permitandu-le sa se conecteze cu contul lor Google - acelasi cont pe care il folosesc deja cu Gmail, Play si alte servicii Google.
 
-Utilizatorii pot crea cu usurinta conturi noi pe aplicatie printr-o singura atingere de buton și pot primi o conectare asistata. In acest fel, acest API reduce riscul de parole uitate sau frustrarea acestora atunci cand incearca sa se autentifice sau sa treaca la o alta activitate. Conectarea asistata permite utilizatorului sa isi aleaga contul existent, prevenind crearea de conturi duplicat.
+Utilizatorii pot crea cu usurinta conturi noi pe aplicatie printr-o singura atingere de buton si pot primi o conectare asistata. In acest fel, acest API reduce riscul de parole uitate sau frustrarea acestora atunci cand incearca sa se autentifice sau sa treaca la o alta activitate. Conectarea asistata permite utilizatorului sa isi aleaga contul existent, prevenind crearea de conturi duplicat.
 
-Când un utilizator îsi salvează parola cu Google pe Android, poate sari procesul de introducere a datelor de autentificare.
+Cand un utilizator isi salveaza parola cu Google pe Android, poate sari procesul de introducere a datelor de autentificare.
 
 ## Google Maps
 
@@ -41,32 +40,9 @@ Grafice bitmap ancorate pozitiilor specifice de pe harta (Ground overlays).
 ## Flux de date
 Exemple de request / response
 
-GetUsers request:
-```bash
-GET /users
-```
-
-GetUsers response:
-```bash
-[{
-	"id":1,
-	"username":"root",
-	"parola":"pass",
-	"email":"email@gmail.com",
-	"nivel_de_acces":1
-},
-{
-	"id":2,
-	"username":"Stancu Vlad",
-	"parola":"UNREGISTERED",
-	"email":"stancu.vlad.stefan@gmail.com",
-	"nivel_de_acces":1
-}]
-```
-
 GetUser Details request:
 ```bash
-GET /users/{id}
+GET /users/{userId}
 ```
 
 GetUser Details response:
@@ -78,6 +54,33 @@ GetUser Details response:
 	"email":"email@gmail.com",
 	"nivel_de_acces":1
 }
+```
+
+GetItems request:
+```bash
+GET /users/{userId}/items
+```
+
+GetItems response:
+```bash
+[
+    {
+        "id": 1,
+        "user_id": 1,
+        "name": "Wash dishes",
+        "description": "NONE"
+    }
+]
+```
+
+DeleteItem request:
+```bash
+DELETE /users/{userId}/items/{itemId}
+```
+
+DeleteItem response:
+```bash
+Item sters cu succes!
 ```
 
 ## Capturi ecran aplicație
