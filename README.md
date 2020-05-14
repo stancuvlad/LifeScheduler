@@ -1,4 +1,7 @@
-# LifeScheduler
+<p>
+  <h1 align="center">LifeScheduler</h1>
+</p>
+
 ## Proiect Cloud
 ## Introducere
 
@@ -85,5 +88,45 @@ Item sters cu succes!
 
 ## Capturi ecran aplicație
 
-Add a new task
-![]images/AddItemScreen.PNG
+La pornirea aplicatiei, prima oara apare un Splash Screen
+
+<p>
+  <h1 align="center">SplashScreen</h1>
+</p>
+<p align="center">
+  <img src="images/SplashScreen.PNG">
+</p>
+
+Dupa porneste activitatea de unde ne putem loga
+
+<p align="center">
+  <img src="images/LoginScreen.PNG"> <img src="images/UseGoogleAccount.PNG">
+</p>
+
+
+Odata ce ne-am conectat, putem accesa functionalitatile aplicatiei.
+Prima oara se incarca sectiunile de unde ne putem alege ce sa facem mai departe din aplicatie.
+
+<p align="center">
+  <img src="images/SectionsScreen.PNG">
+</p>
+
+Daca alegem sectiunea de ToDo, se va incarca urmatoarea activitate:
+
+<p align="center">
+  <img src="images/ToDoScreen.PNG">
+</p>
+
+<p>
+  <h1 align="center">Add a new task</h1>
+</p>
+
+<p align="center">
+  <img src="images/AddItemScreen.PNG">
+</p>
+
+Daca alegem sectiunea de ToGo, se va incarca urmatoarea activitate:
+
+<p align="center">
+  <img src="images/ToGoScreen.PNG">
+</p>
